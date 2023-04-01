@@ -1,3 +1,5 @@
+// Created by Jared Chinchilla on 03/27/2023: @chinchillajared
+
 #include <SPI.h>
 #include <WiFiNINA.h>
 #include <ArduinoHttpClient.h>

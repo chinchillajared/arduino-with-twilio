@@ -3,17 +3,17 @@
 #include <ArduinoHttpClient.h>
 
 //WiFi credentials details 
-char ssid[] = ":)ared";
-char pass[] = "Holamundo007";
+char ssid[] = "your_ssid";
+char pass[] = "your_password";
 
 //Twilio contact details 
-String toPhonenumber = "whatsapp:50689356374";
-String fromPhonenumber = "whatsapp:14155238886";
-String message = "Test003";
+String toPhonenumber = "to_phonenumber"; //If you want to use whatsapp first add Whatsapp at the begining and dont enter the + sign, eg: whatsapp:14155238886
+String fromPhonenumber = "from_phonenumber"; //If you want to use whatsapp first add Whatsapp at the begining and dont enter the + sign, eg: whatsapp:14155238886
+String message = "message";
 
 //Twilio account credetials 
-String accountSID = "AC242ae1adf53d87e8e3698a64836ea826";
-String authToken = "dc5bea55b5893d151da140a380a3e998";
+String accountSID = "yoyr_account_sid";
+String authToken = "your_auth_token";
 
 //body of the HTTP request 
 String body = "Body=" + message + "&To=" + toPhonenumber + "&From=" + fromPhonenumber;

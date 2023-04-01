@@ -7,12 +7,12 @@ char ssid[] = "your_ssid";
 char pass[] = "your_password";
 
 //Twilio contact details 
-String toPhonenumber = "to_phonenumber"; //If you want to use whatsapp first add Whatsapp at the begining and dont enter the + sign, eg: whatsapp:14155238886
-String fromPhonenumber = "from_phonenumber"; //If you want to use whatsapp first add Whatsapp at the begining and dont enter the + sign, eg: whatsapp:14155238886
+String toPhonenumber = "to_phonenumber"; //If you want to use whatsapp first, add Whatsapp at the begining and dont enter the + sign, eg: whatsapp:14155238886
+String fromPhonenumber = "from_phonenumber"; //If you want to use whatsapp first, add Whatsapp at the begining and dont enter the + sign, eg: whatsapp:14155238886
 String message = "message";
 
 //Twilio account credetials 
-String accountSID = "yoyr_account_sid";
+String accountSID = "your_account_sid";
 String authToken = "your_auth_token";
 
 //body of the HTTP request 
@@ -25,6 +25,7 @@ String endPoint = "/2010-04-01/Accounts/" + accountSID + "/Messages.json";
 char server[] = "api.twilio.com";
 int port = 443;
 
+//Start coonection to the server 
 WiFiSSLClient wifi;
 HttpClient client = HttpClient(wifi, server, port);
 
@@ -32,13 +33,14 @@ HttpClient client = HttpClient(wifi, server, port);
 
 void setup() {
 
+  //Satart serial port 
   while (!Serial) {
-    // wait for serial port to connect. Needed for native USB port only
     Serial.begin(9600);
   }
 
   Serial.println("The serial port has been successfully initiated!");
 
+  //Start connection to the WiFi 
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print("Attempting to connect to SSID: ");
     Serial.println(ssid);
@@ -48,7 +50,7 @@ void setup() {
 
   Serial.println("successfully connected to: " + String(ssid));
 
-  //
+  //Make the post request to Twilio API
   Serial.println("making POST request");
   client.beginRequest();
   client.post(endPoint);
@@ -71,7 +73,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  //Do nothing ever 
   while (true)
     ;
 }

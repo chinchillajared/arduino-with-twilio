@@ -9,8 +9,8 @@ char ssid[] = "your_ssid";
 char pass[] = "your_password";
 
 //Twilio contact details 
-String toPhonenumber = "to_phonenumber"; //If you want to use whatsapp, first, add Whatsapp at the begining and dont enter the + sign, eg: whatsapp:14155238886
-String fromPhonenumber = "from_phonenumber"; //If you want to use whatsapp, first, add Whatsapp at the begining and dont enter the + sign, eg: whatsapp:14155238886
+String toPhonenumber = "to_phonenumber"; //If you want to use whatsapp, first, add Whatsapp: at the begining and dont enter the + sign, eg: whatsapp:14155238886
+String fromPhonenumber = "from_phonenumber"; //If you want to use whatsapp, first, add Whatsapp: at the begining and dont enter the + sign, eg: whatsapp:14155238886
 String message = "message";
 
 //Twilio account credetials 

@@ -9,8 +9,8 @@ char ssid[] = "your_ssid";
 char pass[] = "your_password";
 
 //Twilio contact details 
-String toPhonenumber = "to_phonenumber"; //If you want to use whatsapp, first, add Whatsapp: at the begining and dont enter the + sign, eg: whatsapp:14155238886
-String fromPhonenumber = "from_phonenumber"; //If you want to use whatsapp, first, add Whatsapp: at the begining and dont enter the + sign, eg: whatsapp:14155238886
+String toPhonenumber = "to_phonenumber"; //If you want to use whatsapp, first, add Whatsapp: at the begining and dont enter the + sign followed by the phone number, eg: whatsapp:14155238886
+String fromPhonenumber = "from_phonenumber"; //If you want to use whatsapp, first, add Whatsapp: at the begining and dont enter the + sign followed by the phone number, eg: whatsapp:14155238886
 String message = "message";
 
 //Twilio account credetials 
@@ -35,14 +35,14 @@ HttpClient client = HttpClient(wifi, server, port);
 
 void setup() {
 
-  //Satart serial port 
+  //Start serial port 
   while (!Serial) {
     Serial.begin(9600);
   }
 
   Serial.println("The serial port has been successfully initiated!");
 
-  //Start connection to the WiFi 
+  //Start the connection to the WiFi 
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print("Attempting to connect to SSID: ");
     Serial.println(ssid);
@@ -50,6 +50,7 @@ void setup() {
     WiFi.begin(ssid, pass);
   }
 
+  //Print the connection status
   Serial.println("successfully connected to: " + String(ssid));
 
   //Make the post request to Twilio API
@@ -67,7 +68,8 @@ void setup() {
   // read the status code and body of the response
   int statusCode = client.responseStatusCode();
   String response = client.responseBody();
-
+ 
+  // print the result
   Serial.print("Status code: ");
   Serial.println(statusCode);
   Serial.print("Response: ");
